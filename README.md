@@ -11,7 +11,7 @@ You ride a pig that moves forward automatically. You steer with WASD and try not
 The core idea is pretty straightforward - disable pig AI, make them move forward constantly, and spawn glass blocks behind them. But there's a bunch of technical stuff that makes it actually work well:
 
 ### Pig Movement
-The pigs have their AI completely disabled and use velocity-based movement. They move forward constantly and players steer them with WASD. There's a boost system that multiplies speed temporarily.
+The pigs have their AI completely disabled and use teleport based movement. They move forward constantly and players steer them with mouse movements. There's a boost system that multiplies speed temporarily.
 
 ### Trail System
 Uses real glass blocks (not packets) for 100% reliable collision detection. Trails are 2 blocks tall and use different colored glass for each player. The system includes:
@@ -40,8 +40,8 @@ Creates a void world with a black concrete floor and barrier walls. World border
 - Corner block placement for diagonal movements
 
 **PigRideListener** handles the pig movement:
-- Captures player input (WASD)
-- Applies velocity to pigs based on look direction
+- Captures player input (yaw)
+- Applies speed to pigs based on look direction
 - Prevents dismounting during games
 - Real-time collision checking
 
