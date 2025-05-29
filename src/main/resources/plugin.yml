@@ -1,0 +1,46 @@
+name: Tron
+version: '1.0'
+main: Paris.Tron
+api-version: '1.21'
+authors: [ 8th (Paris) ]
+description: High-performance Tron Light Cycle minigame with fast pigs and colored trails
+softdepend: [PacketEvents, ProtocolLib]
+
+commands:
+  tron:
+    description: Main Tron command
+    usage: /tron <subcommand>
+    aliases: [tr]
+  start:
+    description: Force start a Tron game (admin only)
+    usage: /start
+    permission: tron.admin
+  afk:
+    description: Toggle AFK status to opt out of queue
+    usage: /afk
+  stats:
+    description: View your Tron statistics
+    usage: /stats
+  forcegame:
+    description: Force a player into the current game
+    usage: /forcegame <player>
+    permission: tron.admin
+  endgame:
+    description: Force end the current Tron game (admin only)
+    usage: /endgame
+    permission: tron.admin
+  opt:
+    description: Optimization system monitoring and control (admin only)
+    usage: /opt <subcommand>
+    permission: tron.admin
+
+permissions:
+  tron.admin:
+    description: Administrative permissions for Tron
+    default: op
+  tron.play:
+    description: Permission to play Tron
+    default: true
+  tron.stats:
+    description: Permission to view statistics
+    default: true

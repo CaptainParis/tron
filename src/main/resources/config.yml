@@ -1,0 +1,106 @@
+# Tron Minigame Configuration
+
+# Game Settings
+game:
+  # Minimum players required to start a game
+  min-players: 2
+  # Maximum players per game (supports up to 30 with randomized colors)
+  max-players: 30
+  # Time to wait for players before starting (seconds)
+  countdown-time: 5
+  # Game timeout in seconds (0 = no timeout)
+  max-game-time: 300
+  # Speed multiplier for pigs (1.0 = normal, 2.0 = double speed)
+  pig-speed: 6.0
+  # Trail generation interval in ticks (1 = every tick, 2 = every other tick)
+  trail-interval: 1
+  # Enable particle effects
+  particles: true
+  # Enable sound effects
+  sounds: true
+  # Boost settings
+  boost-multiplier: 2.5
+  boost-duration: 3
+
+# Debug settings
+debug:
+  packet-movement: false
+
+# Arena Settings
+arena:
+  # Arena size (square)
+  size: 100
+  # Arena height
+  height: 10
+  # Border material
+  border-material: BARRIER
+  # Floor material
+  floor-material: BLACK_CONCRETE
+  # Arena world name
+  world-name: "tron_arena"
+  # Reset arena between games
+  reset-between-games: true
+
+  # World border settings
+  world-border:
+    # Initial border size (should be larger than arena size)
+    initial-size: 120.0
+    # Final border size (forces players together)
+    final-size: 15.0
+    # Time for border to close completely (seconds)
+    close-time-seconds: 300
+
+# Trail Settings
+trails:
+  # Trail height (always 2 blocks touching the floor)
+  height: 2
+  # Enable trail particles
+  particles: true
+  # Distance behind player to generate trails (prevents vision clipping)
+  delay-distance: 1.0
+
+# Database Settings
+database:
+  # Database type (sqlite, mysql)
+  type: sqlite
+  # SQLite file name (only for sqlite)
+  sqlite-file: "tron_data.db"
+  # MySQL settings (only for mysql)
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "tron"
+    username: "root"
+    password: ""
+
+# Performance Settings (Optimized for lag-free gameplay)
+performance:
+  # Use async block updates for better performance
+  async-blocks: true
+  # Number of blocks to process per tick (higher = more lag, lower = slower updates)
+  batch-size: 200
+  # Maximum trail blocks per player (prevents memory issues)
+  max-trail-blocks: 500
+  # Reduce particle frequency for better performance
+  particle-frequency: 0.1
+  # Use optimized collision detection
+  optimized-collision: true
+  # Enable ground detection for trails (finds ground level once, then caches it)
+  # Set to false to disable ground detection for maximum performance
+  ground-detection: true
+
+# Messages
+messages:
+  prefix: "&6[Tron] &r"
+  game-starting: "&aGame starting in &e{time} &aseconds!"
+  game-started: "&aThe Tron game has begun! Avoid the trails!"
+  player-eliminated: "&c{player} &7has been eliminated!"
+  game-won: "&6{player} &awins the Tron game!"
+  joined-queue: "&aYou have joined the Tron queue!"
+  left-queue: "&cYou have left the Tron queue!"
+  already-in-queue: "&cYou are already in the queue!"
+  not-in-queue: "&cYou are not in the queue!"
+  game-in-progress: "&cA game is already in progress!"
+  insufficient-players: "&cNot enough players to start the game!"
+  afk-enabled: "&7You are now AFK and will not be queued for games."
+  afk-disabled: "&aYou are no longer AFK and will be queued for games."
